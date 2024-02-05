@@ -15,12 +15,12 @@ services:
   load-balancer:
     build: nginx/
     ports:
-      - 80:80
+      - 8080:8080
     links:
       - web1
       - web2
       - web3
     volumes:
       # allows you to run docker commands inside container. Learn more here: https://medium.com/lucjuggery/about-var-run-docker-sock-3bfd276e12fd
+      # - /Users/famaten/.docker/run/docker.sock:/var/run/docker.sock
       - /var/run/docker.sock:/var/run/docker.sock
-      

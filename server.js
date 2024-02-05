@@ -12,7 +12,7 @@ const server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "application/json"});
   console.log('I have been hit!')
   response.end(JSON.stringify({
-      message: request.connection.remoteAddress,
+      message: request.socket.remoteAddress,
       net:os.networkInterfaces()
   }));
 });
